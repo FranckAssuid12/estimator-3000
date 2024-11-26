@@ -1,0 +1,284 @@
+:root {
+    --primary-color: #d6ff00;
+    --secondary-color: #000155;
+    --tertiary-color: #3100BE;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --border-color: #a39eca;
+    --low-color: #4caf50;
+    --medium-color: #f1c40f;
+    --medium-plus-color: #ff9800;
+    --high-color: #f44336;
+    --high-plus-color: #b71c1c;
+    --danger-color: #8B0000;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .ABT-container {
+    position: relative; /* Rend les éléments absolus relatifs à ce conteneur */
+    max-width: 450px;
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+  }
+  
+  /* Header */
+  #main-header {
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    padding: 15px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+  }
+  
+  #main-header .logo {
+    height: 40px;
+    margin-right: 10px;
+    position: absolute;
+    left: 20px;
+  }
+  
+  #main-header h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  /* Footer */
+  #footer-main {
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  #footer-main .footer-text {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 0.9em;
+  }
+  
+  label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+    font-size: 1em;
+    color: var(--tertiary-color);
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  
+  /* Reset Button */
+.ABT-reset-button {
+    position: absolute;
+    top: 10px; /* Ajustez selon la hauteur de l'encadré */
+    right: 10px; /* Positionné dans le coin supérieur droit de l'encadré */
+    background-color: var(--high-color);
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    z-index: 1; /* Assurez-vous qu'il est visible au-dessus du contenu */
+  }
+  
+  .ABT-reset-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff; /* Couleur de l'icône */
+  }
+  
+  .ABT-reset-button:hover {
+    background-color: var(--high-plus-color); /* Couleur au survol */
+  }
+  
+  /* Output Section */
+  .ABT-output {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    background-color: #fafafa;
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .ABT-output p {
+    margin: 6px 0;
+    font-size: 0.9em;
+  }
+  
+  /* Highlight Mandays Line */
+  .ABT-mandays {
+    font-weight: bold;
+    color: var(--tertiary-color);
+  }
+  
+  /* High+ Message */
+  .high-plus-message {
+    color: var(--danger-color);
+    font-weight: bold;
+    margin-top: 8px;
+    text-align: center;
+    visibility: hidden;
+  }
+  
+  /* Copy Button */
+  .ABT-copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ABT-copy-button svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+  }
+  
+  .ABT-copy-button:hover {
+    background-color: var(--tertiary-color);
+  }
+  
+  /* Copy confirmation message */
+  #copy-confirm {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: green;
+    font-size: 0.8em;
+    display: none;
+  }
+  
+  /* Progress Bar Styling */
+  .ABT-progress-bar {
+    margin-top: 20px;
+    width: 100%;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ABT-progress {
+    height: 100%;
+    background-color: var(--low-color);
+    transition: width 0.4s ease;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 0.9em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Dividers for Categories */
+  .ABT-progress-bar .ABT-divider {
+    width: 2px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+  }
+  
+  .ABT-divider-low { left: 25%; }
+  .ABT-divider-medium { left: 50%; }
+  .ABT-divider-medium-plus { left: 75%; }
+  .ABT-divider-high { left: 100%; }
+  
+  /* Accordion Styling for Dev Time */
+  .dev-time-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #dev-detail-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-content {
+    display: none;
+    padding: 8px;
+    background-color: #fafafa;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .accordion-content.open {
+    display: block;
+    max-height: 260px;
+    margin-left: 30px;
+  }
+  
+  /* Flèche d'animation */
+  .accordion-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--tertiary-color);
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-content input[type="number"] {
+    padding: 6px;
+  }
+  
+  /* Disabled input style for Dev Time when accordion is open */
+  #ABT-dev-time.disabled {
+    background-color: #e0e0e0;
+    color: #777;
+    cursor: not-allowed;
+  }
+  

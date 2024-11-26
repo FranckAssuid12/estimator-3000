@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Estimator 3000</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="main-header">
+    <div class="container">
+      <img src="https://assets-manager.abtasty.com/3a043375d5a008f24774cf14caba909e/logo-jaune.png" alt="logo-jaune" class="logo">
+      <h1 id="main-title">Estimator 3000</h1>
+    </div>
+  </header>
+
+  <div class="ABT-container">
+    <button class="ABT-reset-button" onclick="ABT_resetValues()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 4V1L8 5l4 4V6c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8H2c0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 4 12 4z"></path>
+      </svg>
+    </button>
+
+    <label for="ABT-time-spent">Time Already Spent (hours):</label>
+    <input type="number" id="ABT-time-spent" min="0" step="0.25" placeholder="Enter time already spent">
+
+    <label for="ABT-feasibility-time">Feasibility Time (hours):</label>
+    <input type="number" id="ABT-feasibility-time" min="0" step="0.25" placeholder="Enter feasibility time in hours">
+
+    <!-- Accordion-style Dev Time Section -->
+    <label for="ABT-dev-time">Dev Time (hours):</label>
+    <div class="dev-time-container">
+      <input type="number" id="ABT-dev-time" min="1" step="0.25" placeholder="Enter dev time in hours">
+      <button id="dev-detail-toggle" onclick="toggleAccordion()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="accordion-icon">
+          <path d="M12 16l-6-6h12z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="dev-detail-section" class="accordion-content">
+      <label for="ABT-dev-feature1">Pure Dev Time (hours):</label>
+      <input type="number" id="ABT-dev-feature1" min="0" step="0.25" placeholder="Pure dev time">
+      
+      <label for="ABT-dev-feature2">Targeting (hours):</label>
+      <input type="number" id="ABT-dev-feature2" min="0" step="0.25" placeholder="Targeting time">
+      
+      <label for="ABT-dev-feature3">Trackers (quantity, +15 min each):</label>
+      <input type="number" id="ABT-dev-feature3" min="0" step="1" placeholder="Number of trackers">
+      
+      <label for="ABT-dev-feature4">Q&A Time (hours):</label>
+      <input type="number" id="ABT-dev-feature4" min="0" step="0.25" placeholder="Q&A time">
+    </div>
+
+    <div class="ABT-output">
+      <button class="ABT-copy-button" onclick="ABT_copyToClipboard()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 21H9c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h7l5 5v11c0 1.1-.9 2-2 2zM8 5v14h10V9h-5V5H9c-.55 0-1 .45-1 1z"></path>
+        </svg>
+      </button>
+      <p><strong>Dev Margin (30%):</strong> <span id="ABT-margin-output">0h00mn</span></p>
+      <p><strong>CSM/BA Time (50%):</strong> <span id="ABT-csm-output">0h00mn</span></p>
+      <p><strong>Total Time:</strong> <span id="ABT-total-output">0h00mn</span></p>
+      <p class="ABT-mandays"><strong>Mandays:</strong> <span id="ABT-mandays-output">0</span></p>
+      <p><strong>Deadline:</strong> <span id="ABT-deadline-output">8 days</span></p>
+      <p id="copy-confirm">Copied to clipboard!</p>
+    </div>
+
+    <div class="ABT-progress-bar">
+      <div class="ABT-progress" id="ABT-progress-bar"></div>
+      <div class="ABT-divider ABT-divider-low"></div>
+      <div class="ABT-divider ABT-divider-medium"></div>
+      <div class="ABT-divider ABT-divider-medium-plus"></div>
+      <div class="ABT-divider ABT-divider-high"></div>
+    </div>
+
+    <p id="high-plus-message" class="high-plus-message">To be confirmed with a TSE Team Leader</p>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer-main">
+    <div class="container">
+      <p class="footer-text">&copy; 2024 AB Tasty - Estimator 3000. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
